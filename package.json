@@ -1,0 +1,24 @@
+{
+  "name": "social-network",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megparlmer/social-network.git"
+  },
+  "author": "megparlmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/megparlmer/social-network/issues"
+  },
+  "homepage": "https://github.com/megparlmer/social-network#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.8",
+    "node": "^17.7.2"
+  }
+}
