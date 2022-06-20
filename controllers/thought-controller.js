@@ -13,7 +13,7 @@ const thoughtController = {
     },
     getThoughts: async function (req, res) {
         try {
-            const thoughts = await db.Thoughts.find();
+            const thoughts = await db.Thought.find();
             res.status(200).json({ thoughts });
         } catch (error) {
             res.status(500).json({ error: error.message });
@@ -22,7 +22,7 @@ const thoughtController = {
     createThought: async function (req, res) {
         try {
             const newThought = db.Thought.createOne(req.body);
-            res.status(200).json({ thought:newThought });
+            res.status(200).json({ thought: newThought });
         } catch (error) {
             res.status(500).json({ error: error.message });
         }
@@ -41,6 +41,22 @@ const thoughtController = {
             res.status(200).json({ thought: deletedThought });
         } catch(error) {
             res.status(500).json({ error: error.message });
+        }
+    },
+    createReaction: async function (req, res) {
+        try {
+          const createdReaction = await db.Thought.createOne(req.body);
+          res.status(200).json({ reactions: deletedThought });
+        } catch (error) {
+          res.status(500).json({ error: error.message });
+        }
+    },
+    deleteReaction: async function (req, res) {
+        try {
+          const deletedReaction = await db.Thought.findOneAndDelete({});
+          res.status(200).json({ reactions: deletedThought });
+        } catch (error) {
+          res.status(500).json({ error: error.message });
         }
     },
 };
